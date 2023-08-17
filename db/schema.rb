@@ -18,7 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_17_143503) do
     t.text "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "post_id", null: false
+    t.bigint "post_id"
     t.bigint "author_id"
     t.index ["author_id"], name: "index_comments_on_author_id"
     t.index ["post_id"], name: "index_comments_on_post_id"
