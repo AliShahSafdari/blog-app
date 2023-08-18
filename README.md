@@ -41,6 +41,7 @@
 ### Key Features <a name="key-features"></a>
 
 - [x] **create user, post, comment, like**
+- [x] **Add rspec test**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
