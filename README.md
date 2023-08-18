@@ -27,7 +27,7 @@
 
 # 📖 Blog App <a name="about-project"></a>
 
-**Blog App:** is created by Ruby Language and Rails framework and we can add users, posts, comments, and likes. 
+**Blog App:** is created by Ruby Language and Rails framework and we can add users, posts, comments, and likes by rials consol. 
 
 ## 🛠 Built With <a name="built-with"></a>
 
