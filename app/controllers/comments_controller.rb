@@ -1,2 +1,2 @@
-class CommentsController < ActionController::Base
+class CommentsController < ActionController
 end

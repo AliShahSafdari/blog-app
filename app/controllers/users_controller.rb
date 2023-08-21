@@ -1,4 +1,4 @@
-class UsersController < ActionController::Base
+class UsersController < ActionController
   def index; end
 
   def show; end

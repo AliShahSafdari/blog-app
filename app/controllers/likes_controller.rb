@@ -1,2 +1,2 @@
-class LikesController < ActionController::Base
+class LikesController < ActionController
 end
