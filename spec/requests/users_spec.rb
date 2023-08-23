@@ -1,12 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe "Users", type: :request do
-  
+RSpec.describe 'Users', type: :request do
   describe 'GET /users' do
-
-    it "renders a successful response" do
+    it 'renders a successful response' do
       get '/users'
-      expect(response).to be_successful #3
+      expect(response).to be_successful # 3
     end
 
     it 'renders the index action with index view' do
@@ -26,5 +24,4 @@ RSpec.describe "Users", type: :request do
       expect(response.body).to include('List user by id')
     end
   end
-  
 end

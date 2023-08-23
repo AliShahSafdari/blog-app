@@ -1,11 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe "Posts", type: :request do
+RSpec.describe 'Posts', type: :request do
   describe 'GET /users/:id/posts' do
-
-    it "renders a successful response" do
+    it 'renders a successful response' do
       get '/users/1/posts'
-      expect(response).to be_successful #3
+      expect(response).to be_successful # 3
     end
 
     it 'renders the index action with index view' do
@@ -23,6 +22,5 @@ RSpec.describe "Posts", type: :request do
       expect(response).to render_template('posts/show')
       expect(response.body).to include(' show the post by id ')
     end
-
   end
 end
