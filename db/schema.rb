@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_17_143503) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_24_113113) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -39,8 +39,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_17_143503) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "author_id"
-    t.integer "comment_counter"
-    t.integer "like_counter"
+    t.integer "comment_counter", default: 0
+    t.integer "like_counter", default: 0
     t.index ["author_id"], name: "index_posts_on_author_id"
   end
 
@@ -50,7 +50,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_17_143503) do
     t.text "bio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "post_counter"
+    t.integer "post_counter", default: 0
     t.index ["name"], name: "index_users_on_name"
   end
 
