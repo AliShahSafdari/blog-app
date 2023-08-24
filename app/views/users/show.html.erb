@@ -1,1 +1,20 @@
-<h1>List user by id</h1>
+<div class = "container bg-success">
+
+<a href="/users/<%= @user.id %>" class="text-decoration-none">
+<%= render 'shared/user', user: @user %>
+</a>
+ <div class= "row p-3 border">
+    <h3>Bio</h3>
+    <p><%= @user.bio %> </p>
+  </div>
+  <% @user.recent_posts.each do |post| %>
+    <a href="/users/<%= @user.id %>/posts/<%= post.id %>" class="text-decoration-none">
+      <div class="mb-3">
+        <%= render 'shared/post', post: post %>
+      </div>
+    </a>
+  <% end %>
+  <div class="w-90 mt-5 d-flex justify-content-center align-items-center ">
+    <a href="/users/<%= @user.id %>/posts" class="btn bg-white m-1">See all posts</a>
+  </div>
+</div>
