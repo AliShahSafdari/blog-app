@@ -7,6 +7,9 @@
     <h3>Bio</h3>
     <p><%= @user.bio %> </p>
   </div>
+  <div class= "row p-3 border">
+  <%= link_to 'Add a new post', "/users/#{@user.id}/posts/new", class: "btn bg-white" %>
+  </div>
   <% @user.recent_posts.each do |post| %>
     <a href="/users/<%= @user.id %>/posts/<%= post.id %>" class="text-decoration-none">
       <div class="mb-3">
