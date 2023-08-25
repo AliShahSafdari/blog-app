@@ -1,1 +1,16 @@
-<h1> List of All Posts of a user</h1>
+<div class = "container bg-success">
+
+<%= render 'shared/user', user: @author %>
+  <% @posts.each do |post| %>
+    <a href="/users/<%= post.author.id %>/posts/<%= post.id %>" class="text-decoration-none">
+      <div class="mb-3">
+        <%= render 'shared/post', post: post %>
+        <%= render 'shared/comment', comments: post.recent_comments unless post.recent_comments.empty? %>
+      </div>
+    </a>
+  <% end %>
+  <div class="w-90 mt-5 d-flex justify-content-center align-items-center ">
+    <a href="/users/<%=  @author.id  %>/posts" class="btn bg-white m-1">1</a>
+  </div>
+
+</div>
