@@ -1,4 +1,7 @@
 <div class = "container bg-success">
+<%= link_to(user_path(@author)) do %> <!-- Use link_to helper method -->
+  <button id="back-btn">⬅</button>
+<% end %>
 
 <%= render 'shared/user', user: @author %>
   <% @posts.each do |post| %>
@@ -9,8 +12,12 @@
       </div>
     </a>
   <% end %>
-  <div class="w-90 mt-5 d-flex justify-content-center align-items-center ">
-    <a href="/users/<%=  @author.id  %>/posts" class="btn bg-white m-1">1</a>
-  </div>
+  <nav class="">
+  <ul class="pagination justify-content-center align-items-center">
+      <% (1..@total_pages).each do |page| %>
+          <li class="page-item"><a class="btn bg-white m-1" href="/users/<%= @author.id %>/posts?page=<%= page %>"><%= page %></a></li>
+      <% end %>
+  </ul>
+</nav>
 
 </div>
