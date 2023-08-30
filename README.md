@@ -74,6 +74,10 @@ rails s
 - GitHub: [AliShahSafdari](https://github.com/AliShahSafdari)
 - LinkedIn: [AlishahSafdari](https://www.linkedin.com/in/alishahsafdari/)
 
+👤 **Salim Bamahfoodh**
+
+- GitHub: [@salimer](https://github.com/salimer)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
