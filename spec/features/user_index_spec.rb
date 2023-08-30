@@ -2,10 +2,10 @@ require 'rails_helper'
 
 RSpec.feature 'User Index', type: :feature do
   before(:each) do
-    @user = User.create(name: 'Ali',
-                        photo: 'https://placehold.co/200x133',
-                        bio: 'He is good programmer', post_counter: 0)
-    @user1 = User.create(name: 'Salim',photo: 'https://placehold.co/200x133',bio: 'He is good programmer', post_counter: 0)
+    @user = User.create(name: 'Ali', photo: 'https://placehold.co/200x133', bio: 'He is good programmer',
+                        post_counter: 0)
+    @user1 = User.create(name: 'Salim', photo: 'https://placehold.co/200x133', bio: 'He is good programmer',
+                         post_counter: 0)
     @user.posts.create(title: 'Post 1', text: 'This is the first post.', comment_counter: 0, like_counter: 0)
     @user.posts.create(title: 'Post 2', text: 'This is the second post.', comment_counter: 0, like_counter: 0)
     @user.posts.create(title: 'Post 3', text: 'This is the third post.', comment_counter: 0, like_counter: 0)
@@ -14,11 +14,8 @@ RSpec.feature 'User Index', type: :feature do
   describe 'User index page' do
     before(:each) { visit users_path }
 
-    it 'displays a container for the users' do
+    it 'displays  a container and the username of each user' do
       expect(page).to have_css('div.container')
-    end
-
-    it 'displays the username of each user' do
       expect(page).to have_content('Ali')
       expect(page).to have_content('Salim')
     end
