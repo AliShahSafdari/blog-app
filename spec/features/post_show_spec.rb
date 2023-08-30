@@ -23,6 +23,7 @@ RSpec.feature 'Post Index', type: :feature do
       expect(page).to have_content('Comments: 1,')
       expect(page).to have_content('Likes: 1')
     end
+<<<<<<< HEAD
 
     it "I can see the post body" do
       expect(page).to have_content('This is the first post.')
@@ -33,3 +34,15 @@ RSpec.feature 'Post Index', type: :feature do
     end
   end
 end
+=======
+    
+    it "I can see the post body" do
+        expect(page).to have_content('This is the first post.')
+      end
+      
+      it "I can see the username of each commentor and the comment each commentor left." do 
+        expect(page).to have_content('Ali: This is a comment')
+      end
+    end
+  end
+>>>>>>> 270b73c1a019e3ebda3103c6f673847b2704e16b
