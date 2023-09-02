@@ -16,7 +16,6 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @current_user = User.first
     @like = Like.new
   end
 
@@ -30,6 +29,18 @@ class PostsController < ApplicationController
       redirect_to user_posts_path(current_user), notice: 'Post created successfully!'
     else
       render :new
+    end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.likes.destroy_all
+    @post.comments.destroy_all
+    if @post.destroy
+      redirect_to user_posts_path(current_user), notice: 'Post deleted successfully'
+    else
+      flash.new[:alert] = @post.errors.full_messages.first if @post.errors.any?
+      render :show, status: 400
     end
   end
 

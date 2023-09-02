@@ -1,4 +1,5 @@
 <div class = "container bg-success">
+<% if @posts.any? %>
 <%= link_to(user_path(@author)) do %> <!-- Use link_to helper method -->
   <button id="back-btn">⬅</button>
 <% end %>
@@ -19,5 +20,9 @@
       <% end %>
   </ul>
 </nav>
+<% else %>
+<p>No posts available.</p>
+
+<% end %>
 
 </div>
