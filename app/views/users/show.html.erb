@@ -1,5 +1,7 @@
 <div class = "container bg-success">
   <% if user_signed_in? %> 
+  <h3> <%= current_user.role %> : <%= current_user.name %></h3>
+
     <a href="/users" class="text-decoration-none bg-white text-black"> back </a>
     <%= render 'shared/user', user: @user %>
     <div class= "row p-3 border">
