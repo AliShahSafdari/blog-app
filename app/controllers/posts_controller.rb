@@ -33,7 +33,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])    
+    @post = Post.find(params[:id])
     @post.likes.destroy_all
     @post.comments.destroy_all
     if @post.destroy

@@ -10,6 +10,7 @@ class Like < ApplicationRecord
   def update_post_like_counter
     post.increment!(:like_counter)
   end
+
   def update_post_like_counter_decrement
     post.decrement!(:like_counter) if post.present?
   end

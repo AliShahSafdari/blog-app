@@ -6,5 +6,4 @@ class ApplicationController < ActionController::Base
       user.permit(:name, :email, :password, :password_confirmation, :role)
     end
   end
-
 end
