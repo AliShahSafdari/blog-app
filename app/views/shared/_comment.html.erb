@@ -2,6 +2,9 @@
   <div class="card-body">
     <% comments.each do |comment| %>
       <p><%= comment.author.name %>: <%= comment.text %></p>
+      <% if can? :delete, comment %>
+        <%= link_to 'Delete', data: { turbo_method: :delete, confirm: 'Are you sure?' } %>
+      <% end %>
     <% end %>
   </div>
 </div>
