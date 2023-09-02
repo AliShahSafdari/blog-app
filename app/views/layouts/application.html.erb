@@ -13,6 +13,30 @@
 
   <body>
   <div class="container-fluid">
+  <% if flash[:notice] %>
+  <div class="flash notice">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<% if flash[:alert] %>
+  <div class="flash alert">
+    <%= flash[:alert] %>
+  </div>
+<% end %>
+
+<% if flash[:success] %>
+  <div class="flash success">
+    <%= flash[:success] %>
+  </div>
+<% end %>
+
+<% if flash[:error] %>
+  <div class="flash error">
+    <%= flash[:error] %>
+  </div>
+<% end %>
+
     <% if user_signed_in? %>
       <%= link_to 'Sign Out', destroy_user_session_path, data: { turbo_method: :delete } %>
     <% else %>
