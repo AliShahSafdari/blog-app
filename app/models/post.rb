@@ -8,6 +8,7 @@ class Post < ApplicationRecord
   validates :comment_counter, :like_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   after_save :update_user_post_counter
+  after_destroy :update_user_post_counter_decrement
 
   def recent_comments(limit = 5)
     comments.order(created_at: :desc).limit(limit)
@@ -18,4 +19,9 @@ class Post < ApplicationRecord
   def update_user_post_counter
     author.increment!(:post_counter)
   end
+  
+  def update_user_post_counter_decrement
+    author.decrement!(:post_counter) if author.present?
+  end
+
 end
